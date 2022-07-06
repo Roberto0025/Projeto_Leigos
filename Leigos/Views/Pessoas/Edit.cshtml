@@ -1,0 +1,81 @@
+﻿@model Leigos.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pessoa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PessoaId" />
+            <div class="form-group">
+                <label asp-for="NomePessoa" class="control-label"></label>
+                <input asp-for="NomePessoa" class="form-control" />
+                <span asp-validation-for="NomePessoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TelefonePessoa" class="control-label"></label>
+                <input asp-for="TelefonePessoa" class="form-control" />
+                <span asp-validation-for="TelefonePessoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailPessoa" class="control-label"></label>
+                <input asp-for="EmailPessoa" class="form-control" />
+                <span asp-validation-for="EmailPessoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SenhaPessoa" class="control-label"></label>
+                <input asp-for="SenhaPessoa" class="form-control" />
+                <span asp-validation-for="SenhaPessoa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GeneroId" class="control-label"></label>
+                @*<input asp-for="idGenero" class="form-control" />*@
+                <select asp-items="ViewBag.Gen" asp-for="GeneroId" class="form-control"></select>
+                <span asp-validation-for="GeneroId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cep" class="control-label"></label>
+                <input asp-for="Cep" class="form-control" />
+                <span asp-validation-for="Cep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rua" class="control-label"></label>
+                <input asp-for="Rua" class="form-control" />
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numero" class="control-label"></label>
+                <input asp-for="Numero" class="form-control" />
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label"></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label"></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UF" class="control-label"></label>
+                <input asp-for="UF" class="form-control" />
+                <span asp-validation-for="UF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" /> | <a asp-action="Index" class="btn btn-info">Volar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
